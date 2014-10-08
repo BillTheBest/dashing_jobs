@@ -2,6 +2,8 @@
 
 Quick and dirty scripts for getting data into [Dashing](http://dashing.io). The scripts I've written so far are for displaying Ganglia, GridEngine, and Isilon data.
 
+[Sample image of working dashboard](https://raw.githubusercontent.com/ssplatt/dashing_jobs/master/dashing_demo.png)
+
 ##Ganglia data
 
 My `ganglia.rb` script runs from the `dashing_project/jobs/` folder and pulls JSON data from [Ganglia](http://ganglia.sourceforge.net/), which is running on my compute cluster. You may need to add a few lines to the `Gemfile` in the `dashing_project/` folder:
