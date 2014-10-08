@@ -1,10 +1,8 @@
 #Dashing Jobs
-============
 
 Quick and dirty scripts for getting data into [Dashing](http://dashing.io). The scripts I've written so far are for displaying Ganglia, GridEngine, and Isilon data.
 
 ##Ganglia data
-====
 
 My `ganglia.rb` script runs from the `dashing_project/jobs/` folder and pulls JSON data from [Ganglia](http://ganglia.sourceforge.net/), which is running on my compute cluster. You may need to add a few lines to the `Gemfile` in the `dashing_project/` folder:
 
@@ -15,12 +13,10 @@ gem 'addressable'
 then run `bundle install`.
 
 ##Grid Engine data
-====
 
 These scripts are meant to be run via cron on the head node of a compute cluster. They call `qstat` and `qacct` then parse their output for the required data and POST it to Dashing.
 
 ##Isilon data
-====
 
 This script runs via cron on the first node of an Isilon cluster. It calls `isi status -q` and parses the output then ships it to Dashing.
 
