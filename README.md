@@ -4,6 +4,17 @@ Quick and dirty scripts for getting data into [Dashing](http://dashing.io). The 
 
 [Sample image of working dashboard](https://raw.githubusercontent.com/ssplatt/dashing_jobs/master/dashing_demo.png)
 
+Widgets used in the demo image:
+
+- [Weather](https://gist.github.com/davefp/4990174)
+- [Hotness](https://gist.github.com/rowanu/6246149) widgets
+  - with [mod to allow inversed ranges](https://gist.github.com/munkius/9209839)
+- Meter
+- Twitter Comments, tagged #hpc
+- List
+- Image
+- Clock
+
 ##Ganglia data
 
 My `ganglia.rb` script runs from the `dashing_project/jobs/` folder and pulls JSON data from [Ganglia](http://ganglia.sourceforge.net/), which is running on my compute cluster. You may need to add a few lines to the `Gemfile` in the `dashing_project/` folder:
