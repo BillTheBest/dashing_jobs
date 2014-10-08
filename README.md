@@ -22,7 +22,7 @@ This script runs via cron on the first node of an Isilon cluster. It calls `isi 
 
 To add your own custom lines to cron on the Isilon system:
 
-1. check with Isilon support that this is won't ruin your system. I take no respsonsibility for what you do.
+1. check with Isilon support that this won't ruin your system. I take no respsonsibility for what you do.
 1. store the script in a location like `/root/bin/isi_to_dashing.py`
 1. create a file `/etc/local/crontab.local` with a regular crontab style line calling the script
 1. restart cron with `killall -HUP cron`
