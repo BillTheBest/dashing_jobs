@@ -7,7 +7,7 @@ Quick and dirty scripts for getting data into [Dashing](http://dashing.io). The 
 Widgets used in the demo image:
 
 - [Weather](https://gist.github.com/davefp/4990174)
-- [Hotness](https://gist.github.com/rowanu/6246149) widgets
+- [Hotness](https://gist.github.com/rowanu/6246149)
   - with [mod to allow inversed ranges](https://gist.github.com/munkius/9209839)
 - Meter
 - Twitter Comments, tagged #hpc
