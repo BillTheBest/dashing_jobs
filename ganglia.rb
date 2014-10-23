@@ -44,7 +44,7 @@ SCHEDULER.every '15s', :first_in => 0 do |job|
   mbitotal = mbitotal.round(2)
   send_event('ganglia_bytesin', { value: mbitotal })
 
-  #bytes in
+  #bytes out
   mbototal = 0.0
   response = HTTParty.get(uri_bytesout)
   response.each do |host|
@@ -63,15 +63,22 @@ SCHEDULER.every '15s', :first_in => 0 do |job|
   mbps = mbps.round(2)
   send_event('ganglia_throughput', { value: mbps})
   
-  #cpu num
-  total = 0
+  # Total CPUs up
+  # Total Nodes up
+  cputotal = 0
+  nodetotal = 0
   response = HTTParty.get(uri_cpunum)
   response.each do |host|
     data = host["datapoints"][-3][0]
     if data == "NaN"
       data = 0
     end
-    total += data
+    cputotal += data
+    if data > 0
+      nodetotal += 1
+    end
   end
-  send_event('ganglia_cpunum', { value: total })
+  send_event('ganglia_cpunum', { value: cputotal })
+  send_event('ganglia_nodenum', { value: nodetotal })
+  
 end
